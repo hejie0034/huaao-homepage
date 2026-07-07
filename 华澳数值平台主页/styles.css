@@ -486,34 +486,110 @@ a {
   position: relative;
   overflow: hidden;
   border-radius: 8px;
-  background: linear-gradient(135deg, #0f3553, #1b8b8c 56%, #c59742);
+  background: var(--navy);
+  box-shadow: var(--shadow);
 }
 
-.album-grid figure:nth-child(2) {
-  background: linear-gradient(135deg, #25324f, #4f9f8f 52%, #f2d28a);
+.album-trigger {
+  width: 100%;
+  height: 100%;
+  min-height: 150px;
+  display: block;
+  padding: 0;
+  border: 0;
+  cursor: zoom-in;
+  background: transparent;
 }
 
-.album-grid figure:nth-child(3) {
-  background: linear-gradient(135deg, #15334d, #7b5fba 52%, #00c2a8);
+.album-trigger img {
+  width: 100%;
+  height: 100%;
+  min-height: 150px;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.28s ease, opacity 0.28s ease;
 }
 
-.album-grid figure:nth-child(4) {
-  background: linear-gradient(135deg, #08263f, #2b718e 54%, #d6aa4f);
+.album-trigger:hover img,
+.album-trigger:focus-visible img {
+  opacity: 0.9;
+  transform: scale(1.05);
 }
 
-.album-grid span {
-  position: absolute;
-  inset: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.45);
-  border-radius: 6px;
+.album-trigger:focus-visible {
+  outline: 3px solid var(--teal);
+  outline-offset: -3px;
 }
 
 .album-grid figcaption {
   position: absolute;
-  left: 16px;
-  bottom: 14px;
+  inset: auto 0 0;
+  padding: 38px 16px 14px;
   color: var(--white);
   font-weight: 800;
+  pointer-events: none;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.76));
+}
+
+body.lightbox-open {
+  overflow: hidden;
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: grid;
+  place-items: center;
+  padding: 28px;
+  background: rgba(3, 13, 24, 0.86);
+}
+
+.lightbox[hidden] {
+  display: none;
+}
+
+.lightbox-panel {
+  width: min(1040px, 100%);
+  margin: 0;
+}
+
+.lightbox-panel img {
+  width: 100%;
+  max-height: 78vh;
+  display: block;
+  object-fit: contain;
+  border-radius: 8px;
+  background: var(--navy);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.4);
+}
+
+.lightbox-panel figcaption {
+  margin-top: 14px;
+  color: var(--white);
+  font-size: 18px;
+  font-weight: 800;
+  text-align: center;
+}
+
+.lightbox-close {
+  position: fixed;
+  top: 22px;
+  right: 22px;
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(255, 255, 255, 0.38);
+  border-radius: 8px;
+  color: var(--white);
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.12);
+  font-size: 32px;
+  line-height: 1;
+}
+
+.lightbox-close:hover,
+.lightbox-close:focus-visible {
+  background: rgba(255, 255, 255, 0.22);
 }
 
 .site-footer {

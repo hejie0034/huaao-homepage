@@ -193,15 +193,43 @@
             <h2>项目相册</h2>
           </div>
           <div class="album-grid" aria-label="项目相册">
-            <figure><span></span><figcaption>战略签约仪式</figcaption></figure>
-            <figure><span></span><figcaption>智慧教学实训</figcaption></figure>
-            <figure><span></span><figcaption>跨境人才研讨</figcaption></figure>
-            <figure><span></span><figcaption>横琴运营总部</figcaption></figure>
+            <figure>
+              <button class="album-trigger" type="button" aria-label="放大查看战略签约仪式" data-caption="战略签约仪式">
+                <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1200&q=85" alt="战略签约仪式">
+              </button>
+              <figcaption>战略签约仪式</figcaption>
+            </figure>
+            <figure>
+              <button class="album-trigger" type="button" aria-label="放大查看智慧教学实训" data-caption="智慧教学实训">
+                <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1200&q=85" alt="智慧教学实训">
+              </button>
+              <figcaption>智慧教学实训</figcaption>
+            </figure>
+            <figure>
+              <button class="album-trigger" type="button" aria-label="放大查看跨境人才研讨" data-caption="跨境人才研讨">
+                <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1200&q=85" alt="跨境人才研讨">
+              </button>
+              <figcaption>跨境人才研讨</figcaption>
+            </figure>
+            <figure>
+              <button class="album-trigger" type="button" aria-label="放大查看横琴运营总部" data-caption="横琴运营总部">
+                <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=85" alt="横琴运营总部">
+              </button>
+              <figcaption>横琴运营总部</figcaption>
+            </figure>
           </div>
         </div>
       </div>
     </section>
   </main>
+
+  <div class="lightbox" id="album-lightbox" role="dialog" aria-modal="true" aria-label="相册大图预览" hidden>
+    <button class="lightbox-close" type="button" aria-label="关闭大图">×</button>
+    <figure class="lightbox-panel">
+      <img src="" alt="">
+      <figcaption></figcaption>
+    </figure>
+  </div>
 
   <footer id="contact" class="site-footer">
     <div class="container footer-layout">
@@ -219,5 +247,48 @@
       </address>
     </div>
   </footer>
+  <script>
+    const lightbox = document.querySelector("#album-lightbox");
+    const lightboxImage = lightbox.querySelector("img");
+    const lightboxCaption = lightbox.querySelector("figcaption");
+    const lightboxClose = lightbox.querySelector(".lightbox-close");
+    let activeAlbumTrigger = null;
+
+    function openLightbox(trigger) {
+      const image = trigger.querySelector("img");
+      activeAlbumTrigger = trigger;
+      lightboxImage.src = image.src;
+      lightboxImage.alt = image.alt;
+      lightboxCaption.textContent = trigger.dataset.caption || image.alt;
+      lightbox.hidden = false;
+      document.body.classList.add("lightbox-open");
+      lightboxClose.focus();
+    }
+
+    function closeLightbox() {
+      lightbox.hidden = true;
+      document.body.classList.remove("lightbox-open");
+      lightboxImage.src = "";
+      if (activeAlbumTrigger) {
+        activeAlbumTrigger.focus();
+      }
+    }
+
+    document.querySelectorAll(".album-trigger").forEach((trigger) => {
+      trigger.addEventListener("click", () => openLightbox(trigger));
+    });
+
+    lightboxClose.addEventListener("click", closeLightbox);
+    lightbox.addEventListener("click", (event) => {
+      if (event.target === lightbox) {
+        closeLightbox();
+      }
+    });
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && !lightbox.hidden) {
+        closeLightbox();
+      }
+    });
+  </script>
 </body>
 </html>
