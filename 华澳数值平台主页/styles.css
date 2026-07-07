@@ -54,22 +54,18 @@ a {
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   color: var(--white);
-  font-size: 20px;
+  font-size: 17px;
   font-weight: 800;
-  white-space: nowrap;
+  line-height: 1.25;
 }
 
-.brand-mark {
-  width: 34px;
+.brand-logo {
+  width: 74px;
   height: 34px;
-  display: grid;
-  place-items: center;
-  color: var(--navy);
-  background: linear-gradient(135deg, var(--teal), #a6f5e6);
-  border-radius: 8px;
-  font-weight: 900;
+  flex: 0 0 auto;
+  object-fit: contain;
 }
 
 .nav-links {
@@ -652,6 +648,17 @@ address {
 @media (max-width: 560px) {
   .nav-shell {
     height: 62px;
+  }
+
+  .brand {
+    max-width: calc(100vw - 32px);
+    gap: 9px;
+    font-size: 14px;
+  }
+
+  .brand-logo {
+    width: 58px;
+    height: 28px;
   }
 
   .hero {
