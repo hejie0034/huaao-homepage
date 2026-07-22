@@ -14,7 +14,7 @@
 .site-header.inner .nav-links a:hover{color:var(--red);border-color:var(--red)}
 .site-header.inner .nav-toggle{color:var(--ink);border-color:var(--line);background:#fff}
 .page-hero{display:none}
-.spaces-catalog{padding-top:64px}.room-photo{display:block;width:100%;height:260px;object-fit:cover}.room-number{margin:0 0 4px;color:var(--red)!important;font-size:13px;font-weight:900;letter-spacing:.12em}.room-detail{margin:10px 0 0}.room-detail strong{color:var(--ink)}
+.spaces-catalog{padding-top:64px}.room-photo{display:block;width:100%;height:260px;object-fit:cover}.room-number{display:none}.room-detail{margin:10px 0 0}.room-detail strong{color:var(--ink)}
 .intro-block>p:not(.section-kicker){font-size:18px;text-align:center}
 .metrics{grid-template-columns:repeat(3,1fr)}
 @media(max-width:900px){.metrics{grid-template-columns:repeat(3,1fr)}}
