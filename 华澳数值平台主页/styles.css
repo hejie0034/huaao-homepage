@@ -245,3 +245,133 @@ main>section:nth-child(odd),.intro-section,.contact-section{
   main>section:nth-child(even),main>section:nth-child(odd){background:#fff}
   .pale-section,.home-solution-centers{background:#e2e9f8}
 }
+
+/* 2026-07 second visual refinement */
+html,body{background:#fff}
+body:not(.home-page){padding-top:84px}
+main,.section,.pale-section,.intro-section,.home-solution-centers,
+.home-news-showcase,.contact-section,main>section:nth-child(even),
+main>section:nth-child(odd){
+  background:#fff
+}
+.site-header,.site-header.inner,.site-header.is-scrolled,
+.home-page .site-header:not(.inner):not(.is-scrolled){
+  position:fixed;
+  inset:0 0 auto;
+  z-index:50;
+  background:linear-gradient(112deg,#000 0%,#0a1237 48%,#1d358e 100%);
+  border:0;
+  box-shadow:0 10px 30px rgba(0,0,0,.2);
+  transform:translateY(0);
+  transition:transform .38s cubic-bezier(.22,1,.36,1),box-shadow .25s ease;
+  will-change:transform
+}
+.site-header.is-nav-hidden,.home-page .site-header.is-away{
+  transform:translateY(-105%);
+  pointer-events:none
+}
+.nav-shell,.home-page .nav-shell{
+  min-height:84px;
+  padding:0;
+  transform:translateY(-2px)
+}
+.home-page main>section:not(.hero-section){
+  padding-top:84px
+}
+.home-page main>section.section:not(.hero-section){
+  padding-top:84px
+}
+.brand,.nav-links,.site-header.is-scrolled .brand,.site-header.is-scrolled .nav-links,
+.site-header.inner .brand,.site-header.inner .nav-links,
+.home-page .site-header:not(.inner):not(.is-scrolled) .brand,
+.home-page .site-header:not(.inner):not(.is-scrolled) .nav-links{
+  color:#fff;
+  text-shadow:none
+}
+.nav-links a:hover,.site-header.is-scrolled .nav-links a:hover,
+.site-header.inner .nav-links a:hover,
+.home-page .site-header:not(.inner):not(.is-scrolled) .nav-links a:hover{
+  color:#fff;
+  border-color:#fff
+}
+.nav-toggle,.site-header.is-scrolled .nav-toggle,.site-header.inner .nav-toggle{
+  color:#fff;
+  border-color:rgba(255,255,255,.5);
+  background:rgba(255,255,255,.1)
+}
+.intro-block .metrics{
+  background:rgba(227,236,250,.56);
+  border:1px solid rgba(11,27,88,.08)
+}
+.intro-block .metrics>div{
+  background:transparent
+}
+.advantage-card{
+  background:#0b1b58;
+  border-color:#0b1b58;
+  color:#fff;
+  box-shadow:0 18px 42px rgba(11,27,88,.2)
+}
+.advantage-card span,.advantage-card h3,.advantage-card p{
+  color:#fff
+}
+.advantage-card:hover{
+  border-color:#1d358e;
+  background:#13276f
+}
+.home-page .home-solution-centers .solution-entry,
+.solution-entry{
+  background:#0b1b58;
+  border-color:#0b1b58;
+  color:#fff;
+  box-shadow:0 18px 42px rgba(11,27,88,.2)
+}
+.home-page .home-solution-centers .solution-entry>span,
+.home-page .home-solution-centers .solution-entry h2,
+.home-page .home-solution-centers .solution-entry p,
+.home-page .home-solution-centers .solution-entry b,
+.solution-entry>span,.solution-entry h2,.solution-entry p,.solution-entry b{
+  color:#fff
+}
+.solution-entry:hover{
+  border-color:#1d358e;
+  background:#13276f
+}
+.contact-section,main>section.contact-section{
+  color:#fff;
+  background:linear-gradient(180deg,#000 0%,#0a1237 52%,#1d358e 100%)
+}
+.home-page .contact-section .section-title-row h2,
+.contact-section .section-kicker,.contact-section .contact-intro,
+.contact-section .contact-info-grid h3,.contact-section .contact-info-grid p,
+.contact-section .contact-info-grid span,.contact-section .contact-info-grid a{
+  color:#fff
+}
+.contact-info-grid{
+  border-color:rgba(255,255,255,.26)
+}
+.contact-info-grid>div{
+  border-color:rgba(255,255,255,.22)
+}
+.contact-info-grid>div:hover,.contact-info-grid>div:focus-within{
+  background:rgba(255,255,255,.1);
+  box-shadow:0 18px 40px rgba(0,0,0,.22)
+}
+.home-page .site-footer,.site-footer{
+  background:#1d358e;
+  border:0;
+  box-shadow:none
+}
+@media(max-width:900px){
+  body:not(.home-page){padding-top:76px}
+  .nav-shell,.home-page .nav-shell{min-height:76px;transform:none}
+  .home-page main>section:not(.hero-section),
+  .home-page main>section.section:not(.hero-section){padding-top:76px}
+  .nav-links,.site-header.is-scrolled .nav-links{
+    background:linear-gradient(145deg,#000,#1d358e)
+  }
+  .site-header.is-nav-hidden,.home-page .site-header.is-away{
+    transform:translateY(-105%);
+    pointer-events:none
+  }
+}
