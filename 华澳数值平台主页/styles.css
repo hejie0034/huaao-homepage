@@ -259,9 +259,9 @@ main>section:nth-child(odd){
   position:fixed;
   inset:0 0 auto;
   z-index:50;
-  background:linear-gradient(112deg,#000 0%,#0a1237 48%,#1d358e 100%);
-  border:0;
-  box-shadow:0 10px 30px rgba(0,0,0,.2);
+  background:#fff;
+  border-bottom:1px solid rgba(11,27,88,.1);
+  box-shadow:0 7px 24px rgba(11,27,88,.08);
   transform:translateY(0);
   transition:transform .38s cubic-bezier(.22,1,.36,1),box-shadow .25s ease;
   will-change:transform
@@ -285,19 +285,19 @@ main>section:nth-child(odd){
 .site-header.inner .brand,.site-header.inner .nav-links,
 .home-page .site-header:not(.inner):not(.is-scrolled) .brand,
 .home-page .site-header:not(.inner):not(.is-scrolled) .nav-links{
-  color:#fff;
+  color:#000;
   text-shadow:none
 }
 .nav-links a:hover,.site-header.is-scrolled .nav-links a:hover,
 .site-header.inner .nav-links a:hover,
 .home-page .site-header:not(.inner):not(.is-scrolled) .nav-links a:hover{
-  color:#fff;
-  border-color:#fff
+  color:#1d358e;
+  border-color:#1d358e
 }
 .nav-toggle,.site-header.is-scrolled .nav-toggle,.site-header.inner .nav-toggle{
-  color:#fff;
-  border-color:rgba(255,255,255,.5);
-  background:rgba(255,255,255,.1)
+  color:#0b1b58;
+  border-color:rgba(11,27,88,.2);
+  background:#fff
 }
 .intro-block .metrics{
   background:rgba(227,236,250,.56);
@@ -368,7 +368,8 @@ main>section:nth-child(odd){
   .home-page main>section:not(.hero-section),
   .home-page main>section.section:not(.hero-section){padding-top:76px}
   .nav-links,.site-header.is-scrolled .nav-links{
-    background:linear-gradient(145deg,#000,#1d358e)
+    background:#fff;
+    box-shadow:0 14px 28px rgba(11,27,88,.12)
   }
   .site-header.is-nav-hidden,.home-page .site-header.is-away{
     transform:translateY(-105%);
