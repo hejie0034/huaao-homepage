@@ -246,6 +246,63 @@ main>section:nth-child(odd),.intro-section,.contact-section{
   .pale-section,.home-solution-centers{background:#e2e9f8}
 }
 
+/* 高清国内合作院校展示 */
+.partner-panel .domestic-partner-board{
+  display:grid;
+  grid-template-columns:repeat(5,minmax(0,1fr));
+  gap:22px;
+  width:min(1320px,100%);
+  margin:0 auto;
+  align-items:stretch
+}
+.partner-panel .domestic-partner-card{
+  display:flex;
+  width:auto;
+  height:auto;
+  min-height:190px;
+  margin:0;
+  padding:24px 18px 18px;
+  flex-direction:column;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+  border:1px solid rgba(22,49,114,.11);
+  border-radius:12px;
+  background:#fff;
+  background-image:none;
+  mix-blend-mode:normal;
+  box-shadow:0 8px 24px rgba(22,49,114,.06);
+  transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease
+}
+.partner-panel .domestic-partner-card:hover{
+  border-color:rgba(30,86,160,.5);
+  transform:translateY(-5px);
+  box-shadow:0 16px 34px rgba(22,49,114,.13)
+}
+.partner-panel .domestic-partner-card img{
+  display:block;
+  width:100%;
+  height:92px;
+  object-fit:contain
+}
+.partner-panel .domestic-partner-card figcaption{
+  display:flex;
+  width:100%;
+  min-height:44px;
+  align-items:center;
+  justify-content:center;
+  padding-top:15px;
+  border-top:1px solid rgba(22,49,114,.09);
+  color:#163172;
+  font-size:15px;
+  font-weight:800;
+  line-height:1.45;
+  text-align:center
+}
+@media(max-width:1100px){.partner-panel .domestic-partner-board{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:700px){.partner-panel .domestic-partner-board{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.partner-panel .domestic-partner-card{min-height:165px;padding:18px 12px 14px}.partner-panel .domestic-partner-card img{height:76px}.partner-panel .domestic-partner-card figcaption{font-size:13px}}
+@media(max-width:420px){.partner-panel .domestic-partner-board{grid-template-columns:1fr}}
+
 /* 2026-07 second visual refinement */
 html,body{background:#fff}
 body:not(.home-page){padding-top:84px}

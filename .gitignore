@@ -1,0 +1,7 @@
+node_modules/
+outputs/
+
+# Task-specific generated files; these are not part of the website.
+build_question_inventory.mjs
+prepare_question_inventory.py
+question_inventory_data.json
