@@ -1,5 +1,59 @@
 const navToggle=document.querySelector('.nav-toggle');const navLinks=document.querySelector('.nav-links');const siteHeader=document.querySelector('.site-header');if(navToggle&&navLinks){navToggle.addEventListener('click',()=>{const open=navToggle.getAttribute('aria-expanded')==='true';navToggle.setAttribute('aria-expanded',String(!open));navLinks.classList.toggle('is-open')})}if(siteHeader){let navRevealTimer;const scrollSurface=document.querySelector('.home-page')||window;const updateHeader=()=>{siteHeader.classList.add('is-nav-hidden');clearTimeout(navRevealTimer);navRevealTimer=setTimeout(()=>siteHeader.classList.remove('is-nav-hidden'),220)};scrollSurface.addEventListener('scroll',updateHeader,{passive:true})}const slides=[...document.querySelectorAll('.hero-slide')];if(slides.length){let current=0,timer;const show=i=>{current=(i+slides.length)%slides.length;slides.forEach((s,n)=>s.classList.toggle('is-active',n===current))};const start=()=>{clearInterval(timer);timer=setInterval(()=>show(current+1),3800)};document.querySelector('[data-carousel-prev]')?.addEventListener('click',()=>{show(current-1);start()});document.querySelector('[data-carousel-next]')?.addEventListener('click',()=>{show(current+1);start()});show(0);start()}
-const domesticBoard=document.querySelector('[data-domestic-partners]');if(domesticBoard){const domesticPartners=['广东开放大学','国家教育行政学院','北京大学','华中科技大学','哈尔滨工业大学','北京理工大学','四川大学','北京师范大学','宁夏大学','河北工业大学','中南财经政法大学','北京科技大学','重庆大学','华南理工大学','天津大学','江西师范大学','赣南师范大学','江西陶瓷工艺美术职业技术学院','宜春幼儿师范高等专科学校','江西工业工程职业技术学院','江西工业工程职业技术学院','温州医科大学','湖南农业大学','云南艺术学院','天津体育学院','福建师范大学','福建农林大学','东莞理工学院','山东理工大学','湖北大学','安徽农业大学','安徽工程大学','北京开放大学','浙江树人学院','联合国教科文组织职业技术教育数字化教席','武汉学院','广州开放大学','吉林交通职业技术学院','吉林交通职业技术学院','岳阳职业技术学院','武汉铁路职业技术学院','广东生态工程职业学院','青海职业技术大学','深圳职业技术大学','湖北交通职业技术学院','湖北三峡职业技术学院','武汉职业技术大学','襄阳职业技术学院','云南能源职业技术学院','成都职业技术学院','成都轻工职业技术大学','成都航空职业技术大学','吉林交通职业技术学院'];domesticPartners.forEach((name,index)=>{const card=document.createElement('figure');card.className='domestic-partner-card';const image=document.createElement('img');const number=String(index+1).padStart(2,'0');image.src=`assets/partners/domestic-hd/domestic-${number}.${index===1?'jpg':'png'}`;image.alt=`${name}标志`;image.loading=index<10?'eager':'lazy';image.decoding='async';const caption=document.createElement('figcaption');caption.textContent=name;card.append(image,caption);domesticBoard.appendChild(card)})}
+const domesticBoard=document.querySelector('[data-domestic-partners]');if(domesticBoard){
+const domesticPartners=['广东开放大学','国家教育行政学院','北京大学','华中科技大学','哈尔滨工业大学','北京理工大学','四川大学','北京师范大学','宁夏大学','河北工业大学','中南财经政法大学','北京科技大学','重庆大学','华南理工大学','天津大学','江西师范大学','赣南师范大学','江西陶瓷工艺美术职业技术学院','宜春幼儿师范高等专科学校','江西工业工程职业技术学院','江西工业工程职业技术学院','温州医科大学','湖南农业大学','云南艺术学院','天津体育学院','福建师范大学','福建农林大学','东莞理工学院','山东理工大学','湖北大学','安徽农业大学','安徽工程大学','北京开放大学','浙江树人学院','联合国教科文组织职业技术教育数字化教席','武汉学院','广州开放大学','吉林交通职业技术学院','吉林交通职业技术学院','岳阳职业技术学院','武汉铁路职业技术学院','广东生态工程职业学院','青海职业技术大学','深圳职业技术大学','湖北交通职业技术学院','湖北三峡职业技术学院','武汉职业技术大学','襄阳职业技术学院','云南能源职业技术学院','成都职业技术学院','成都轻工职业技术大学','成都航空职业技术大学','吉林交通职业技术学院'];
+const domesticPartnerDescriptions={
+'广东开放大学':'开展思政智慧课程建设，打造开放教育特色思政课程',
+'国家教育行政学院':'人工智能赋能干部培训示范',
+'北京大学':'打造《习近平新时代中国特色社会主义思想概论》智慧课程',
+'华中科技大学':'新时代实践教育服务平台',
+'哈尔滨工业大学':'智慧教学空间助力商学院教学模式创新',
+'北京理工大学':'鸿蒙AI智慧教室助力教学创新',
+'四川大学':'大思政课资源库与内容审核系统',
+'北京师范大学':'建设物理学科智慧课程并研发教学智能体，提升物理教学质量',
+'宁夏大学':'300间未来教室引领教育新未来',
+'河北工业大学':'虚拟仿真空间融合工科专业特色，助力课程思政与思政课程一体化建设',
+'中南财经政法大学':'推进智慧教学实施，建设智慧课程与教学智能体，打造一流课程',
+'北京科技大学':'构建数理类专业图谱并研发教学智能体，支撑数理专业教学',
+'重庆大学':'3D建模虚拟仿真资源建设',
+'华南理工大学':'建设智慧课程并研发课程思政智能体，推动思政教育数字化',
+'天津大学':'174间教室课堂资源沉淀，自动构建课程知识图谱',
+'江西师范大学':'“大思政课”实践教学协作共同体',
+'赣南师范大学':'“苏区红”大思政课育人品牌',
+'江西陶瓷工艺美术职业技术学院':'“大思政课”线上资源平台',
+'宜春幼儿师范高等专科学校':'课程思政示范课程建设',
+'江西工业工程职业技术学院':'智慧课程建设',
+'温州医科大学':'新时代实践教育服务平台',
+'湖南农业大学':'“禾声问稻”思政教学智能体',
+'云南艺术学院':'数智思政教育创新实践教学基地',
+'天津体育学院':'建设智慧课程、教学智能体与课程思政智能体，驱动智慧教学',
+'福建师范大学':'思政课程与课程思政建设',
+'福建农林大学':'建设大思政教学空间与党史党建研究院，助力农林类院校思政教育',
+'东莞理工学院':'线上线下混合教学十年深度应用，“人工智能+教育”全面覆盖',
+'山东理工大学':'打造省级“人工智能+高等教育”典型应用场景案例，推广智慧教育经验',
+'湖北大学':'智慧课程建设与课程思政示范课程建设',
+'安徽农业大学':'“红色金寨 绿色振兴”思政课实践教学活动',
+'安徽工程大学':'“大思政课”实践教学基地数字地图',
+'北京开放大学':'建设智慧课程并研发教学智能体，推动开放教育数字化转型',
+'浙江树人学院':'238间智慧教室、600+课程智能体建设，AI赋能本科教学评估',
+'联合国教科文组织职业技术教育数字化教席':'建设教席国际化平台并开发6门国际化课程',
+'武汉学院':'推进课程思政建设与智慧课程开发，提升教学数字化与思政化水平',
+'广州开放大学':'开展数字人微课建设与数智课材一体化建设，创新教学资源形态',
+'吉林交通职业技术学院':'思政育人智能教学与资源平台',
+'岳阳职业技术学院':'国际化数字资源平台',
+'武汉铁路职业技术学院':'“大思政课”虚拟仿真实践教学基地',
+'广东生态工程职业学院':'开展智慧课程建设、国际化课程开发，以课程思政赋能专业教学',
+'青海职业技术大学':'推进课程思政建设与数智课材开发，赋能职业教育教学',
+'深圳职业技术大学':'系统推进课程思政建设，将思政元素融入专业教学全过程',
+'湖北交通职业技术学院':'虚拟仿真中心课程教学资源',
+'湖北三峡职业技术学院':'“江图智绘”思政教学智能体',
+'武汉职业技术大学':'推进课程思政建设与智慧课程建设，赋能职业人才培养',
+'襄阳职业技术学院':'推进课程思政建设与课程教材开发，夯实职业教育教学基础',
+'云南能源职业技术学院':'“红色匠心”思政课沉浸式体验实训室',
+'成都职业技术学院':'多形态智慧教学空间赋能特色专业人才培养',
+'成都轻工职业技术大学':'多形态智慧教学空间协同学校推动产教融合协同育人',
+'成都航空职业技术大学':'33间全新智慧教室，“新双高”专业数智化转型'
+};
+domesticPartners.forEach((name,index)=>{const card=document.createElement('figure');card.className='domestic-partner-card';const image=document.createElement('img');const number=String(index+1).padStart(2,'0');image.src=`assets/partners/domestic-hd/domestic-${number}.${index===1?'jpg':'png'}`;image.alt=`${name}标志`;image.loading=index<10?'eager':'lazy';image.decoding='async';const caption=document.createElement('figcaption');caption.textContent=name;const description=document.createElement('p');description.textContent=domesticPartnerDescriptions[name];card.append(image,caption,description);domesticBoard.appendChild(card)})}
 const partnerTabs=[...document.querySelectorAll('[data-partner-tab]')];const partnerPanels=[...document.querySelectorAll('[data-partner-panel]')];partnerTabs.forEach(tab=>tab.addEventListener('click',()=>{const target=tab.dataset.partnerTab;partnerTabs.forEach(item=>{const active=item===tab;item.classList.toggle('is-active',active);item.setAttribute('aria-selected',String(active))});partnerPanels.forEach(panel=>{const active=panel.dataset.partnerPanel===target;panel.classList.toggle('is-active',active);panel.hidden=!active})}));
 const countup=document.querySelector('[data-countup]');if(countup){let countRun=0;let countupVisible=false;const resetCountup=()=>countup.querySelectorAll('[data-count]').forEach(number=>number.textContent='0');const runCountup=()=>{const runId=++countRun;countup.classList.add('is-visible');countup.querySelectorAll('[data-count]').forEach(number=>{const target=Number(number.dataset.count);const duration=1400;const start=performance.now();const tick=now=>{if(runId!==countRun)return;const progress=Math.min((now-start)/duration,1);const eased=1-Math.pow(1-progress,3);number.textContent=String(Math.round(target*eased));if(progress<1)requestAnimationFrame(tick)};requestAnimationFrame(tick)})};if('IntersectionObserver'in window){const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting&&!countupVisible){countupVisible=true;runCountup()}else if(!entry.isIntersecting&&countupVisible){countupVisible=false;countRun+=1;countup.classList.remove('is-visible');resetCountup()}}),{threshold:.35});observer.observe(countup)}else runCountup()}
 const homePage=document.querySelector('.home-page');if(homePage){homePage.classList.add('reveal-ready');const homeSections=[...homePage.querySelectorAll('main>section')];const revealObserver=new IntersectionObserver(entries=>entries.forEach(entry=>entry.target.classList.toggle('is-in-view',entry.isIntersecting)),{root:homePage,threshold:.32});homeSections.forEach(section=>{if(section.classList.contains('hero-section'))section.classList.add('is-in-view');else revealObserver.observe(section)})}

@@ -259,7 +259,7 @@ main>section:nth-child(odd),.intro-section,.contact-section{
   display:flex;
   width:auto;
   height:auto;
-  min-height:190px;
+  min-height:264px;
   margin:0;
   padding:24px 18px 18px;
   flex-direction:column;
@@ -299,8 +299,17 @@ main>section:nth-child(odd),.intro-section,.contact-section{
   line-height:1.45;
   text-align:center
 }
+.partner-panel .domestic-partner-card p{
+  width:100%;
+  min-height:64px;
+  margin:0;
+  color:#59697a;
+  font-size:13px;
+  line-height:1.65;
+  text-align:center
+}
 @media(max-width:1100px){.partner-panel .domestic-partner-board{grid-template-columns:repeat(3,minmax(0,1fr))}}
-@media(max-width:700px){.partner-panel .domestic-partner-board{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.partner-panel .domestic-partner-card{min-height:165px;padding:18px 12px 14px}.partner-panel .domestic-partner-card img{height:76px}.partner-panel .domestic-partner-card figcaption{font-size:13px}}
+@media(max-width:700px){.partner-panel .domestic-partner-board{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.partner-panel .domestic-partner-card{min-height:248px;padding:18px 12px 14px}.partner-panel .domestic-partner-card img{height:76px}.partner-panel .domestic-partner-card figcaption{font-size:13px}.partner-panel .domestic-partner-card p{font-size:12px}}
 @media(max-width:420px){.partner-panel .domestic-partner-board{grid-template-columns:1fr}}
 
 /* 2026-07 second visual refinement */
