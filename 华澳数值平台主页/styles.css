@@ -524,9 +524,124 @@ h2{font-weight:600}
 .contact-section,main>section.contact-section{background:#081144}
 .contact-info-grid{border-color:rgba(255,255,255,.24)}
 .contact-info-grid>div{border-color:rgba(255,255,255,.18)}
-.home-page .site-footer,.site-footer{background:#203586}
+.home-page .site-footer,.site-footer{background:#081144}
 .more-link,.room-meta,.news-sketch-grid time{color:#203586}
 .carousel-arrow{background:rgba(8,17,68,.64)}
 @media(max-width:900px){
   .nav-links,.site-header.is-scrolled .nav-links{background:#fff}
+}
+
+/* 2026-08 compact responsive pass */
+body{font-size:15px}
+.container{width:min(1080px,calc(100% - 48px))}
+.nav-shell,.home-page .nav-shell{
+  width:min(1240px,calc(100% - 48px));
+  min-height:76px;
+  padding:0;
+  transform:none
+}
+.home-page .brand-logo,.brand-logo{width:72px;height:36px}
+.home-page .brand span,.brand span{min-height:36px;font-size:16px;line-height:1.2}
+.home-page .nav-links,.nav-links{gap:24px;font-size:16px}
+.nav-links .nav-cta,
+.site-header.is-scrolled .nav-links .nav-cta,
+.site-header.inner .nav-links .nav-cta,
+.home-page .site-header:not(.inner):not(.is-scrolled) .nav-links .nav-cta{
+  padding:12px 0;
+  border-radius:0;
+  background:transparent;
+  color:inherit;
+  box-shadow:none
+}
+.section,.home-page main>section.section{padding:54px 0}
+.home-page .section-title-row,.home-page .home-news-bar{margin-bottom:28px}
+.home-page .section-title-row h2,
+.home-page .home-news-bar h2,
+.home-page .intro-block>h2,
+.home-page .home-solution-centers .section-title-row h2{
+  font-size:clamp(30px,3vw,38px);
+  font-weight:700
+}
+.intro-block{max-width:980px}
+.home-page .intro-block>p:not(.section-kicker),
+.intro-block>p:not(.section-kicker){font-size:15px;line-height:1.9}
+.intro-block .metrics{
+  max-width:980px;
+  margin-top:34px;
+  padding:28px 0 24px
+}
+.intro-block .metrics>div{padding:0 18px}
+.intro-block .metrics strong{font-size:clamp(42px,4.2vw,58px)}
+.intro-block .metrics strong small{font-size:17px}
+.intro-block .metrics>div>span{
+  margin-top:12px;
+  padding:4px 12px;
+  font-size:15px
+}
+.advantage-card,.feature-grid a,.news-sketch-grid a,.detail-card{padding:24px}
+.advantage-card h3,.feature-grid h3{font-size:20px}
+.advantage-card p{color:#fff;font-size:16px}
+.home-page .home-solution-centers .solution-entry{
+  min-height:190px;
+  padding:22px 26px
+}
+.home-page .home-solution-centers .solution-entry h2{font-size:23px}
+.home-page .home-solution-centers .solution-entry p{font-size:14px}
+.home-page .home-solution-centers .solution-entry b{left:26px;bottom:18px;font-size:14px}
+.news-feature-card,
+.news-feature-card time,
+.news-feature-card h2,
+.news-feature-card span,
+.home-news-showcase .news-feature-card time,
+.home-news-showcase .news-feature-card h2,
+.home-news-showcase .news-feature-card span{color:#fff}
+.contact-info-grid>div{min-height:164px;padding:22px}
+.contact-info-grid h3{margin:20px 0 8px;font-size:19px}
+.page-hero{padding:64px 0 56px}
+.page-hero h1,.solution-heading h1,.center-hero h1,.empty-center h1{
+  font-size:clamp(34px,4vw,50px)
+}
+.detail-section,.tech-feature{padding:56px 0}
+.detail-section h2,.tech-feature article h2{font-size:30px}
+
+@media(max-width:1080px){
+  .nav-toggle{display:block}
+  .nav-links,.home-page .nav-links{
+    display:none;
+    position:absolute;
+    top:76px;
+    left:18px;
+    right:18px;
+    gap:0;
+    padding:12px 18px;
+    flex-direction:column;
+    align-items:stretch;
+    background:#fff;
+    box-shadow:0 14px 28px rgba(8,17,68,.12)
+  }
+  .nav-links.is-open,.home-page .nav-links.is-open{display:flex}
+  .nav-links a,.nav-links .nav-cta{padding:10px 0}
+}
+
+@media(max-width:620px){
+  body{font-size:14px}
+  .container{width:calc(100% - 28px)}
+  .nav-shell,.home-page .nav-shell{width:calc(100% - 28px);min-height:68px}
+  .home-page .brand-logo,.brand-logo{width:62px;height:31px}
+  .home-page .brand span,.brand span{max-width:190px;min-height:31px;font-size:12px}
+  .nav-links,.home-page .nav-links{top:68px}
+  .home-page main>section.hero-section{min-height:560px}
+  .section,.home-page main>section.section{padding:44px 0}
+  .home-page .section-title-row h2,
+  .home-page .home-news-bar h2,
+  .home-page .intro-block>h2,
+  .home-page .home-solution-centers .section-title-row h2{font-size:30px}
+  .home-page .section-title-row,.home-page .home-news-bar{margin-bottom:24px}
+  .intro-block .metrics{margin-top:24px;padding:8px 0}
+  .intro-block .metrics>div{padding:20px 12px}
+  .intro-block .metrics strong{font-size:44px}
+  .intro-block .metrics strong small{font-size:15px}
+  .intro-block .metrics>div>span{font-size:14px}
+  .page-hero h1,.solution-heading h1,.center-hero h1,.empty-center h1{font-size:32px}
+  .detail-section h2,.tech-feature article h2{font-size:26px}
 }
