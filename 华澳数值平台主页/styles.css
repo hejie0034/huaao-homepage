@@ -442,3 +442,91 @@ main>section:nth-child(odd){
     pointer-events:none
   }
 }
+
+/* 2026-08 Figma-inspired visual system
+   Keeps the existing structure, content and carousel assets intact. */
+:root{
+  --ink:#31367c;
+  --muted:#6f789b;
+  --line:#dfe4f1;
+  --soft:#f9fbff;
+  --pale:#f9fbff;
+  --white:#fff;
+  --red:#203586;
+  --blue:#081144;
+  --green:#203586;
+  --shadow:0 14px 36px rgba(8,17,68,.1)
+}
+body{
+  color:var(--ink);
+  font-family:Inter,"Microsoft YaHei","PingFang SC","DengXian",Arial,sans-serif;
+  letter-spacing:.01em
+}
+.site-header,.site-header.inner,.site-header.is-scrolled,
+.home-page .site-header:not(.inner):not(.is-scrolled){
+  border-bottom-color:rgba(8,17,68,.09);
+  box-shadow:0 6px 24px rgba(8,17,68,.1)
+}
+.brand,.nav-links,.site-header.is-scrolled .brand,.site-header.is-scrolled .nav-links,
+.site-header.inner .brand,.site-header.inner .nav-links,
+.home-page .site-header:not(.inner):not(.is-scrolled) .brand,
+.home-page .site-header:not(.inner):not(.is-scrolled) .nav-links{color:#11183f}
+.nav-links a:hover,.site-header.is-scrolled .nav-links a:hover,
+.site-header.inner .nav-links a:hover,
+.home-page .site-header:not(.inner):not(.is-scrolled) .nav-links a:hover{
+  color:#203586;
+  border-color:#203586
+}
+.section-kicker,.eyebrow{
+  color:#6f789b;
+  font-weight:700;
+  letter-spacing:.18em
+}
+h1,h2,h3{color:#31367c;letter-spacing:.015em}
+h2{font-weight:600}
+.intro-section,main>section.intro-section{background:#f9fbff}
+.pale-section,main>section.pale-section{background:#fff}
+.intro-block>p:not(.section-kicker),.contact-intro,
+.advantage-card p,.feature-grid p,.news-sketch-grid p,
+.detail-section p,.detail-section li{color:#6f789b}
+.intro-block .metrics{
+  background:#fff;
+  border-color:#e3e7f2;
+  box-shadow:0 14px 36px rgba(8,17,68,.07)
+}
+.intro-block .metrics>div{border-top-color:#203586}
+.metrics strong{color:#203586}
+.section-title-row{border-bottom-color:#dfe4f1}
+.advantage-card,.home-page .home-solution-centers .solution-entry,.solution-entry{
+  background:#081144;
+  border-color:#081144;
+  box-shadow:0 18px 38px rgba(8,17,68,.16)
+}
+.advantage-card:hover,.solution-entry:hover{
+  background:#111f61;
+  border-color:#203586;
+  box-shadow:0 22px 44px rgba(8,17,68,.22)
+}
+.button.primary,.nav-cta{background:#203586;color:#fff}
+.page-hero,.center-hero,.empty-center{
+  background:linear-gradient(135deg,#081144 0%,#182665 100%);
+  color:#fff
+}
+.page-hero h1,.center-hero h1,.empty-center h1{color:#fff}
+.page-hero p,.center-hero>div>p:last-child,.empty-center p{color:#d8dcef}
+.detail-card,.room-card,.feature-grid a,.news-sketch-grid a,
+.certificate-layout figure,.teach-card,.two-column-story>div,
+.incubation-steps article{
+  border-color:#e1e5f0;
+  box-shadow:0 14px 34px rgba(8,17,68,.08)
+}
+.pill-list li{background:#eef1fa;color:#203586}
+.contact-section,main>section.contact-section{background:#081144}
+.contact-info-grid{border-color:rgba(255,255,255,.24)}
+.contact-info-grid>div{border-color:rgba(255,255,255,.18)}
+.home-page .site-footer,.site-footer{background:#203586}
+.more-link,.room-meta,.news-sketch-grid time{color:#203586}
+.carousel-arrow{background:rgba(8,17,68,.64)}
+@media(max-width:900px){
+  .nav-links,.site-header.is-scrolled .nav-links{background:#fff}
+}
