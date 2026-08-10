@@ -608,6 +608,55 @@ body{font-size:15px}
 .detail-section,.tech-feature{padding:56px 0}
 .detail-section h2,.tech-feature article h2{font-size:30px}
 
+/* Smart education: text-only layout until high-resolution photography is available. */
+.education-page.text-only img{display:none}
+.education-page .classroom-specs .spec-grid{
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:20px
+}
+.education-page .classroom-specs .spec-grid article{
+  display:flex;
+  min-height:260px;
+  padding:28px 30px 24px;
+  flex-direction:column;
+  border:1px solid #dfe4f1;
+  border-top:4px solid #203586;
+  background:#fff;
+  box-shadow:0 12px 30px rgba(8,17,68,.08)
+}
+.education-page .classroom-specs .spec-grid article>span,
+.education-page .classroom-specs .spec-grid article>h3,
+.education-page .classroom-specs .spec-grid article>b,
+.education-page .classroom-specs .spec-grid article>ul{
+  margin-left:0;
+  margin-right:0
+}
+.education-page .classroom-specs .spec-grid article>span{
+  margin-top:0;
+  color:#203586;
+  font-size:13px
+}
+.education-page .classroom-specs .spec-grid h3{
+  margin-top:10px;
+  margin-bottom:8px;
+  font-size:22px
+}
+.education-page .classroom-specs .spec-grid b{
+  min-height:0;
+  margin-bottom:16px;
+  color:#31367c;
+  font-size:14px
+}
+.education-page .classroom-specs .spec-grid ul{
+  margin-top:auto;
+  margin-bottom:0;
+  padding-bottom:0;
+  color:#222;
+  font-size:15px
+}
+.education-page .stack-layer.environment{padding-bottom:30px}
+.education-page .stack-layer.environment p{margin-bottom:0;color:#222}
+
 @media(max-width:1080px){
   .nav-toggle{display:block}
   .nav-links,.home-page .nav-links{
@@ -648,4 +697,6 @@ body{font-size:15px}
   .intro-block .metrics>div>span{font-size:14px}
   .page-hero h1,.solution-heading h1,.center-hero h1,.empty-center h1{font-size:32px}
   .detail-section h2,.tech-feature article h2{font-size:26px}
+  .education-page .classroom-specs .spec-grid{grid-template-columns:1fr}
+  .education-page .classroom-specs .spec-grid article{min-height:0;padding:24px 22px}
 }
