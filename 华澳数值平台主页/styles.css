@@ -656,6 +656,8 @@ body{font-size:15px}
 }
 .education-page .stack-layer.environment{padding-bottom:30px}
 .education-page .stack-layer.environment p{margin-bottom:0;color:#222}
+.education-page .foundation h3,
+.education-page .foundation p{color:#fff}
 
 @media(max-width:1080px){
   .nav-toggle{display:block}
