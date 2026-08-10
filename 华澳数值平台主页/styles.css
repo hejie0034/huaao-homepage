@@ -676,10 +676,22 @@ body{font-size:15px}
   font-size:18px
 }
 .education-page .environment-channel .environment-tags{gap:9px}
+.education-page .environment-channel.offline .environment-tags{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:8px
+}
 .education-page .environment-channel .environment-tags span{
+  display:flex;
+  min-height:44px;
+  align-items:center;
+  justify-content:center;
+  padding:7px 6px;
   border:1px solid #e1e6f0;
   color:#081144;
-  font-size:14px
+  font-size:13px;
+  line-height:1.35;
+  text-align:center
 }
 .education-page .environment-channel.online{
   display:flex;
@@ -735,4 +747,5 @@ body{font-size:15px}
   .education-page .classroom-specs .spec-grid article{min-height:0;padding:24px 22px}
   .education-page .environment-split{grid-template-columns:1fr}
   .education-page .environment-channel{padding:20px}
+  .education-page .environment-channel.offline .environment-tags{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
