@@ -656,6 +656,38 @@ body{font-size:15px}
 }
 .education-page .stack-layer.environment{padding-bottom:30px}
 .education-page .stack-layer.environment p{margin-bottom:0;color:#222}
+.education-page .environment-split{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+  margin-top:18px
+}
+.education-page .environment-channel{
+  min-width:0;
+  padding:22px 24px;
+  border:1px solid #d9e1ee;
+  border-radius:12px;
+  background:#fff
+}
+.education-page .environment-channel>strong{
+  display:block;
+  margin-bottom:16px;
+  color:#203586;
+  font-size:18px
+}
+.education-page .environment-channel .environment-tags{gap:9px}
+.education-page .environment-channel .environment-tags span{
+  border:1px solid #e1e6f0;
+  color:#081144;
+  font-size:14px
+}
+.education-page .environment-channel.online{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  background:#f7f9fd
+}
+.education-page .environment-channel.online p{margin:0;line-height:1.9}
 .education-page .foundation h3,
 .education-page .foundation p{color:#fff}
 
@@ -701,4 +733,6 @@ body{font-size:15px}
   .detail-section h2,.tech-feature article h2{font-size:26px}
   .education-page .classroom-specs .spec-grid{grid-template-columns:1fr}
   .education-page .classroom-specs .spec-grid article{min-height:0;padding:24px 22px}
+  .education-page .environment-split{grid-template-columns:1fr}
+  .education-page .environment-channel{padding:20px}
 }
