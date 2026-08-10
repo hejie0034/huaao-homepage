@@ -581,6 +581,10 @@ body{font-size:15px}
 .advantage-card,.feature-grid a,.news-sketch-grid a,.detail-card{padding:24px}
 .advantage-card h3,.feature-grid h3{font-size:20px}
 .advantage-card p{color:#fff;font-size:16px}
+.center-hero h1,
+.center-hero>div>p:last-child,
+.ecosystem-page .center-hero h1,
+.ecosystem-page .center-hero .container>p:last-child{color:#000}
 .home-page .home-solution-centers .solution-entry{
   min-height:190px;
   padding:22px 26px
